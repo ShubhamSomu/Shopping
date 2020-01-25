@@ -11,5 +11,5 @@ import lombok.Data;
 public class Coordinates {
 	@Id
 	private String id;
-	private Integer items;	
+	private Integer items;
 }

@@ -11,14 +11,14 @@ import com.assignment.shopping.cms.model.Category;
 import com.assignment.shopping.cms.repository.CategoryRepository;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
 	MongoTemplate mongoTemplate;
-	
+
 	@Autowired
 	private CategoryRepository categoryRepository;
-	
+
 	@Override
 	public Optional<Category> retrieveCategoryById(String id) {
 		return categoryRepository.retrieveById(id);
@@ -35,6 +35,9 @@ public class CategoryServiceImpl implements CategoryService{
 		return categoryRepository.retrieveAllCategory();
 	}
 
-	
-	
+	@Override
+	public Optional<Boolean> deleteCategory(Category category) {
+		return categoryRepository.deleteCategory(category);
+	}
+
 }

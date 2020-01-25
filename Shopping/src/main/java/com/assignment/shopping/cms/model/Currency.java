@@ -1,6 +1,5 @@
 package com.assignment.shopping.cms.model;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -8,23 +7,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.Builder;
 import lombok.Data;
 
-@Document(collection = "Category")
+@Document(collection = "Currency")
 @Data
 @Builder
-public class Category implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Currency {
 	@Id
 	private String id;
+	private String currencyCode;
+	private String factor;
+	private String geoCode;
+	private List<String> geoId;
 	private String name;
-	private String tag;
-	private String description;
-	private Boolean selected;
-	private List<Banner> banners;
-	private List<Filter> filters;
+	private String value;
 	@Builder.Default
 	@JsonIgnore
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
