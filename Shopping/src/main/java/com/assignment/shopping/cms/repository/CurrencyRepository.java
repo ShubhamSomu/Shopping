@@ -31,7 +31,7 @@ public class CurrencyRepository implements ICurrencyRepository {
 		Query query = new Query().addCriteria(Criteria.where("isDeleted").is(false).and("id").is(id));
 		List<Currency> find = mongoTemplate.find(query, Currency.class);
 		if (find == null || find.size() <= 0 || find.get(0) == null)
-			return Optional.of(null);
+			return Optional.ofNullable(null);
 		else {
 			Optional<Currency> currency = Optional.of(find.get(0));
 			return currency;

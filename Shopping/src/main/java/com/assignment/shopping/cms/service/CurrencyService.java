@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 
 import com.assignment.shopping.cms.ExceptionHandling.ResourceNotFoundException;
 import com.assignment.shopping.cms.model.Currency;
 import com.assignment.shopping.cms.repository.CurrencyRepository;
 
+@Service
 public class CurrencyService implements ICurrencyService {
 
 	@Autowired
